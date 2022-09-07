@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Metro - Transaction History</title>
+	</head>
+	<body>
+		<a href="/">Menu</a>
+		<h1>Travel History</h1>
+		<p th:text = "${message}"></p>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Source</th>
+					<th>Destination</th>
+					<th>Swipe-in Time</th>
+					<th>Swipe-out Time</th>
+					<th>Fare</th>
+				</tr>
+			</thead>
+			<tr th:each = "transaction: ${transactions}">
+				<td th:text = "${transaction.id}"></td>
+				<td th:text = "${transaction.sourceMetroStation}"></td>
+				<td th:text = "${transaction.destinationMetroStation}"></td>
+				<td th:text = "${transaction.swipeInTime}"></td>
+				<td th:text = "${transaction.swipeOutTime}"></td>
+				<td th:text = "${transaction.fare}"></td>
+			</tr>
+		</table>
+	</body>
+</html>

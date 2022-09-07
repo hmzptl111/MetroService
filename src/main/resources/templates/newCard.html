@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Metro - Generate new card</title>
+	</head>
+	<body>
+		<form action="/newCard" method="POST" class="container">
+			<h1>Generate New Card</h1>
+			
+			<p th:text="${message}"></p>
+			
+			<input type="email"	placeholder="Enter Email" name="email" required> 
+			
+			<input type="password" placeholder="Enter Password" name="password" required>
+			
+			<input type="number" placeholder="100" name="balance" required>
+	
+			<button type="submit">Generate</button>
+			<a href="/signIn">Sign in</a>
+		</form>
+	</body>
+</html>

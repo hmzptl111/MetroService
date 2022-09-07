@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Metro</title>
+	</head>
+	
+	<body>
+		<div th:if="${session.isSwipedIn}">
+			<a href = "/swipeOut">Swipe out</a>
+		</div>
+		<div th:unless="${session.isSwipedIn}">
+			<a href = "/swipeIn">Swipe in</a>
+		</div>
+		<a href = "/updateBalance">Update balance</a><br>
+		<a href = "/checkBalance">Check balance</a><br>
+		<a href = "/transactionHistory">Travel History</a>
+		<form action="/signOut" method = "POST" >
+			<button type="submit" value = "Sign out">Sign out</button>
+		</form>
+	</body>
+</html>
